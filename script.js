@@ -54,7 +54,12 @@ function sendMsg() {
     var myDiv = document.createElement("div");
     var greendiv = document.createElement("div");
     var dateLabel = document.createElement("label");
-    dateLabel.innerText = date.getHours() + ":" + date.getMinutes();
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+    if(minutes<10){
+        minutes = "0" + minutes;
+    }
+    dateLabel.innerText = hour + ":" + minutes;
     myDiv.setAttribute("class", "sent");
     greendiv.setAttribute("class", "green");
     dateLabel.setAttribute("class", "dateLabel");
